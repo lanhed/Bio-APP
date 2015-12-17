@@ -9,6 +9,23 @@
                     <dd>{{ tag.id | bytesToHexString }}</dd>
 
                 </dl>
+                <div class="card" ng-repeat="record in tag.ndefMessage">
+                    <div class="item item-divider">
+                        Record {{$index + 1}} <br/>
+                    </div>
+                    <div class="item item-text-wrap">
+                        <dl>
+                            <dt>TNF</dt>
+                            <dd>{{ record.tnf | tnfToString }}</dd>
+                            <dt>Record Type</dt>
+                            <dd>{{ record.type | bytesToString }}</dd>
+                            <dt ng-if="record.id">Record Id</dt>
+                            <dd ng-if="record.id">{{ record.id | bytesToString }}</dd>
+                            <dt>Payload</dt>
+                            <dd>{{ record | decodePayload }}</dd>
+                        </dl>
+                    </div>
+                </div>              
             </div>
         </div>
 

@@ -202,9 +202,9 @@ angular.module('starter.controllers', ['ionic'])
   function writeData(url) {
     writeDialog.open(function(tag) {
 
-      if (Tweet.indexOf('Tweet') === -1) {
-        url = 'https://twitter.com/intent/follow?user_id=' + Tweet;
-      }
+      //if (url.indexOf('Tweet') === -1) {
+        url = 'https://twitter.com/intent/follow?screen_name=' + url;
+      //
 
       return ndef.uriRecord(url);
 
